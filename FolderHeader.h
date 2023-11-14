@@ -24,8 +24,8 @@ private:
 	File files[10]; //file array
 	Folder *folders; //folder array
 
-	int amount_folders;
 	int amount_files;
+	int amount_folders;
 
 /// <Functions within the classes and constructors>
 /// Change name
@@ -37,6 +37,7 @@ private:
 /// </summary>
 
 public:
+
 
 	//Folder constructors
 	Folder() 
@@ -56,13 +57,53 @@ public:
 		folders = new Folder[5];
 	}
 
-	//Function for changing name
+	//Function for changing name on folders
 	void ChangeName()
 	{
-		string rename = "";
-		PrintInfo();
+		string newName = "";
+
+		for (int i = 0; i < amount_folders; ++i) 
+		{
+			cout << folders[i].getName();
+			cout << "\n";
+		}
+	
 		cout << "Type the name of the Folder you would like to rename\n";
-		cin >> rename;
+		cin >> newName;
+		for (int i = 0; i < amount_folders; ++i)
+		{
+			if (newName == folders[i].getName()) 
+			{
+				cout << "What would you like to rename it?\n";
+				cin >> name;
+				Folder::folders[i].name = name;
+
+			}
+		}
+	};
+	//function for changing name on files
+	void ChangeFileName()
+	{
+		string newName = "";
+
+		for (int i = 0; i < amount_files; ++i)
+		{
+			cout << files[i].getName();
+			cout << "\n";
+		}
+
+		cout << "Type the name of the File you would like to rename\n";
+		cin >> newName;
+		for (int i = 0; i < amount_files; ++i)
+		{
+			if (newName == files[i].getName())
+			{
+				cout << "What would you like to rename it?\n";
+				cin >> name;
+				Folder::files[i].name = name;
+
+			}
+		}
 	};
 
 	//Function for printing info and files inside
@@ -99,7 +140,7 @@ public:
 		}
 		else 
 		{
-			cout << "Too many files in" << name << "\n";
+			cout << "Too many files in " << name << "\n";
 		}
 	}
 
@@ -147,5 +188,6 @@ public:
 		}
 		files[index].PrintInfo();
 	}
+
 };
 

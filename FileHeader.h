@@ -2,6 +2,7 @@
 #include<iostream>
 #include <string>
 #include <vector>
+#include "FolderHeader.h"
 
 using namespace std;
 
@@ -10,11 +11,12 @@ using namespace std;
 class File
 {
 private:
-	string name;
 	int size;
 	string date;
 
 public:
+	string name;
+
 //File constructors
 File(string newName)
 {
@@ -31,7 +33,7 @@ File()
 //Function for changing name
 void ChangeName()
 {
-	cin >> name;
+
 };
 //Fucntion for printing info
 void PrintInfo()

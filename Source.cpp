@@ -72,7 +72,7 @@ void main()
 			//Renaming file
 			else if (menu_input == 2)
 			{
-			
+				main.ChangeFileName();
 			}
 			else
 			{
